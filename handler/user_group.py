@@ -8,6 +8,9 @@ user_group_router = Router()
 user_group_router.message.filter(ChaTypeFilter(['group', 'supergroup']))
 user_group_router.edited_message.filter(ChaTypeFilter(['group', 'supergroup']))
 
+# Хендлер реагирующий на команду /admin и проверяет является ли пользовать
+# отправивший команду админом группы, если да то включает его в список admin_list 
+# и удаляет исходное сообщение , если нет то игнорирует команду.
 
 @user_group_router.message(Command('admin'))
 async def get_admins(message: types.Message, bot: Bot):

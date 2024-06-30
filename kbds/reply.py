@@ -1,6 +1,8 @@
 from aiogram.types import KeyboardButton
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
+# Создание клавиатуры ,которая потом повсюду вызывается
+
 
 def get_keyboard(
         *btns: str,
